@@ -199,6 +199,7 @@ namespace BSAkinator
                     writer.WriteLine("2.");
                     reader.ReadLine();
                     reader.ReadLine();
+                    reader.ReadLine();
                     ResetGame();
                 }
                 else
