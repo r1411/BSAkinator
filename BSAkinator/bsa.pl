@@ -180,5 +180,5 @@ addChar(Rarity, Race, Speed, GadgetAttack, Gender, Attack, ShortName, SuperDamag
     write("+Персонаж успешно добавлен!"), nl.
 
 
-main :- 
-    set_prolog_flag(encoding, utf8), see('bsa.txt'), read_brawlers, seen, find.
+init_db :- set_prolog_flag(encoding, utf8), see('bsa.txt'), read_brawlers, seen.
+main :- find.

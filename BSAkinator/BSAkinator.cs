@@ -47,6 +47,10 @@ namespace BSAkinator
             swiplProcess.StartInfo.CreateNoWindow = true;
             swiplProcess.Start();
 
+            GetPrologInput().WriteLine("init_db.");
+            GetPrologOutput().ReadLine();
+            GetPrologOutput().ReadLine();
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainForm());
