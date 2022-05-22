@@ -75,12 +75,16 @@ namespace BSAkinator
                 {
                     gameState = GameState.Guessed;
                     tableLayoutPanelAnswers.Controls.Clear();
-                    label1.Text = e.Message;
-                    FillAnswers(new string[] { (answeredQuestions == 8) ? "Да" : "Да", "Нет" });
+                    string[] parts = e.Message.Split('|');
+                    label1.Text = parts[0];
+                    pictureBox1.Image = Properties.Resources.bs_loading;
+                    pictureBox1.LoadAsync(parts[1]);
+                    FillAnswers(new string[] { "Да", "Нет" });
                 }
                 else if (gameState == GameState.AskingToAdd)
                 {
                     MessageBox.Show(e.Message, "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    reader.ReadLine();
                     reader.ReadLine();
                     ResetGame();
                 }
@@ -111,7 +115,9 @@ namespace BSAkinator
         // Отправить прологу имя нового персонажа. В msg лежит строка с приглашением ко вводу, которое нужно показать пользователю. 
         private void EnterNewCharName(string msg)
         {
-            AnswerQuestion("Аптуп"); // TODO: Сделать диалог с вводом имени нового персонажа
+            // TODO: Сделать диалог с вводом имени персонажа и ссылки на картинку
+            writer.WriteLine("Аптуп."); 
+            AnswerQuestion("'https://static.wikia.nocookie.net/brawlstars/images/1/1c/Brawl_Icon.png'"); // TODO: Сделать диалог с вводом имени нового персонажа
         }
 
         private void ResetGame()
@@ -121,6 +127,7 @@ namespace BSAkinator
             tableLayoutPanelAnswers.Controls.Clear();
             buttonBottom.Text = "Начать";
             label1.Text = "Привет! Я угадываю персонажей игры Brawl Stars";
+            pictureBox1.Image = Properties.Resources.defi;
         }
 
         private void buttonBottom_Click(object sender, EventArgs e)
@@ -150,7 +157,12 @@ namespace BSAkinator
             else if (gameState == GameState.Guessed)
             {
                 RadioButton yes = (RadioButton)tableLayoutPanelAnswers.Controls[0];
-                RadioButton no = (RadioButton)tableLayoutPanelAnswers.Controls[1];
+                RadioButton no;
+                if (tableLayoutPanelAnswers.Controls.Count > 1)
+                    no = (RadioButton)tableLayoutPanelAnswers.Controls[1];
+                else
+                    no = null;
+
                 if (yes.Checked)
                 {
                     writer.WriteLine("1.");
@@ -159,10 +171,13 @@ namespace BSAkinator
                     reader.ReadLine();
                     ResetGame();
                 } 
-                else if (no.Checked)
+                else if (no != null)
                 {
-                    gameState = GameState.AskingToAdd;
-                    AnswerQuestion("2");
+                    if (no.Checked)
+                    {
+                        gameState = GameState.AskingToAdd;
+                        AnswerQuestion("2");
+                    }
                 } 
                 else
                 {

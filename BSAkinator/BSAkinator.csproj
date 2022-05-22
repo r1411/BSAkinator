@@ -88,6 +88,7 @@
     <Content Include="bsa.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\bs_loading.gif" />
     <None Include="Resources\defi.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -8,6 +8,7 @@
 :- dynamic attack/2.
 :- dynamic short_name/2.
 :- dynamic super_damage/2.
+:- dynamic image_url/2.
 
 read_str(A, N) :- read_str(A, N, 0).
 read_str(A,N,Flag):-get0(X), not(X = -1), r_str(X,A,[],N,0,Flag).
@@ -22,9 +23,10 @@ write_str([H|Tail]):-put(H),write_str(Tail).
 
 read_brawlers :- 
     read_str(CharStr, Flag), not(Flag = 1), name(Char, CharStr), 
-    read(Rarity), read(Race), read(Speed), read(GadgetAttack), read(Gender), read(Attack), read(ShortName), read(SuperDamage), get0(_),
+    read(Rarity), read(Race), read(Speed), read(GadgetAttack), read(Gender), read(Attack), read(ShortName), read(SuperDamage), read(ImageUrl), get0(_),
     assertz(rarity(Char, Rarity)), assertz(race(Char, Race)), assertz(speed(Char, Speed)), assertz(gadget_attack(Char, GadgetAttack)),
-    assertz(gender(Char, Gender)), assertz(attack(Char, Attack)), assertz(short_name(Char, ShortName)), assertz(super_damage(Char, SuperDamage)),
+    assertz(gender(Char, Gender)), assertz(attack(Char, Attack)), assertz(short_name(Char, ShortName)), assertz(super_damage(Char, SuperDamage)), 
+    assertz(image_url(Char, ImageUrl)),
     read_brawlers, !.
 read_brawlers:- !.
 
@@ -134,7 +136,8 @@ find :-
 
 % Нашли единственный ответ
 found(X, Rarity, Race, Speed, GadgetAttack, Gender, Attack, ShortName, SuperDamage) :-
-    write("+Ваш персонаж — "), write(X), write("?"), nl, read(Ans),
+    image_url(X, ImageUrl),
+    write("+Ваш персонаж — "), write(X), write("?|"), write(ImageUrl), nl, read(Ans),
     Ans =\= 1 -> addChar(Rarity, Race, Speed, GadgetAttack, Gender, Attack, ShortName, SuperDamage); true.
 
 % Не нашли ответ
@@ -151,13 +154,15 @@ addChar(Rarity, Race, Speed, GadgetAttack, Gender, Attack, ShortName, SuperDamag
     (var(Attack) -> questionAttack(Attack) ; true),
     (var(ShortName) -> questionShortName(ShortName) ; true),
     (var(SuperDamage) -> questionSuperDamage(SuperDamage) ; true),
-    write("*Введите имя нового персонажа"), nl,
+    write("*Введите имя и url картинки нового персонажа"), nl,
     read_term(Char, [var_prefix]),
+    read_term(ImageUrl, [var_prefix]),
     
     (exists(Rarity, Race, Speed, GadgetAttack, Gender, Attack, ShortName, SuperDamage) -> write("-Персонаж с такими данными уже существует!"), nl, !, fail; true),
 
     assertz(rarity(Char, Rarity)), assertz(race(Char, Race)), assertz(speed(Char, Speed)), assertz(gadget_attack(Char, GadgetAttack)),
     assertz(gender(Char, Gender)), assertz(attack(Char, Attack)), assertz(short_name(Char, ShortName)), assertz(super_damage(Char, SuperDamage)),
+    assertz(image_url(Char, ImageUrl)),
 
     append('bsa.txt'),
     write(Char), nl,
@@ -169,6 +174,7 @@ addChar(Rarity, Race, Speed, GadgetAttack, Gender, Attack, ShortName, SuperDamag
     write(Attack), write("."), nl,
     write(ShortName), write("."), nl,
     write(SuperDamage), write("."), nl,
+    write("'"), write(ImageUrl), write("'"), write("."), nl,
     told,
     
     write("+Персонаж успешно добавлен!"), nl.
