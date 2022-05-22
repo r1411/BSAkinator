@@ -9,12 +9,12 @@ namespace BSAkinator
     {
         private StreamWriter writer;
         private StreamReader reader;
-        private bool isGameRunning;
         private int answeredQuestions;
+        private GameState gameState;
 
         public MainForm()
         {
-            isGameRunning = false;
+            gameState = GameState.Init;
             answeredQuestions = 0;
             InitializeComponent();
             writer = BSAkinator.GetPrologInput();
@@ -67,31 +67,41 @@ namespace BSAkinator
             }
             catch (GuessedException e)
             {
+                gameState = GameState.Guessed;
                 tableLayoutPanelAnswers.Controls.Clear();
                 label1.Text = e.Message;
                 FillAnswers(new string[] { (answeredQuestions == 8) ? "Да": "Да", "Нет" });
             }
             catch (NotFoundException e)
             {
-                MessageBox.Show(e.Message);
+                gameState = GameState.NoAnswer;
                 tableLayoutPanelAnswers.Controls.Clear();
                 label1.Text = e.Message;
                 FillAnswers(new string[] { "Да", "Нет" });
             }
         }
 
+        private void ResetGame()
+        {
+            answeredQuestions = 0;
+            gameState = GameState.Init;
+            tableLayoutPanelAnswers.Controls.Clear();
+            buttonBottom.Text = "Начать";
+            label1.Text = "";
+        }
+
         private void buttonBottom_Click(object sender, EventArgs e)
         {
-            if (!isGameRunning)
+            if (gameState == GameState.Init)
             {
                 // Запуск игры
                 answeredQuestions = 0;
-                isGameRunning = true;
+                gameState = GameState.Asking;
                 writer.WriteLine("main.");
                 buttonBottom.Text = "Ответить";
                 ReadQuestion();
             }
-            else
+            else if (gameState == GameState.Asking)
             {
                 // Ответить на вопрос
                 for(int i = 0; i < tableLayoutPanelAnswers.Controls.Count; i++)
@@ -102,6 +112,48 @@ namespace BSAkinator
                         AnswerQuestion(i + 1);
                         answeredQuestions += 1;
                     }
+                }
+            } 
+            else if (gameState == GameState.Guessed)
+            {
+                RadioButton yes = (RadioButton)tableLayoutPanelAnswers.Controls[0];
+                RadioButton no = (RadioButton)tableLayoutPanelAnswers.Controls[1];
+                if (yes.Checked)
+                {
+                    writer.WriteLine("1.");
+                    reader.ReadLine();
+                    reader.ReadLine();
+                    reader.ReadLine();
+                    ResetGame();
+                } 
+                else if (no.Checked)
+                {
+                    writer.WriteLine("2.");
+                } 
+                else
+                {
+                    return;
+                }
+            }
+            else if (gameState == GameState.NoAnswer)
+            {
+                RadioButton yes = (RadioButton)tableLayoutPanelAnswers.Controls[0];
+                RadioButton no = (RadioButton)tableLayoutPanelAnswers.Controls[1];
+
+                if (yes.Checked)
+                {
+
+                }
+                else if (no.Checked)
+                {
+                    writer.WriteLine("2.");
+                    reader.ReadLine();
+                    reader.ReadLine();
+                    ResetGame();
+                }
+                else
+                {
+                    return;
                 }
             }
         }
