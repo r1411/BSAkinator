@@ -7,6 +7,7 @@
 1.
 2.
 1.
+'https://static.wikia.nocookie.net/brawlstars/images/1/1c/Brawl_Icon.png'.
 Кольт
 1.
 1.
@@ -16,6 +17,7 @@
 2.
 2.
 1.
+'https://static.wikia.nocookie.net/brawlstars/images/1/1c/Brawl_Icon.png'.
 Нита
 1.
 1.
@@ -25,6 +27,7 @@
 1.
 2.
 1.
+'https://static.wikia.nocookie.net/brawlstars/images/1/1c/Brawl_Icon.png'.
 Булл
 1.
 1.
@@ -34,6 +37,7 @@
 1.
 2.
 1.
+'https://static.wikia.nocookie.net/brawlstars/images/1/1c/Brawl_Icon.png'.
 Джесси
 1.
 1.
@@ -43,6 +47,7 @@
 2.
 2.
 1.
+'https://static.wikia.nocookie.net/brawlstars/images/1/1c/Brawl_Icon.png'.
 Брок
 1.
 1.
@@ -52,6 +57,7 @@
 1.
 2.
 1.
+'https://static.wikia.nocookie.net/brawlstars/images/1/1c/Brawl_Icon.png'.
 Динамайк
 1.
 1.
@@ -61,6 +67,7 @@
 1.
 2.
 1.
+'https://static.wikia.nocookie.net/brawlstars/images/1/1c/Brawl_Icon.png'.
 Бо
 1.
 1.
@@ -70,6 +77,7 @@
 1.
 1.
 1.
+'https://static.wikia.nocookie.net/brawlstars/images/1/1c/Brawl_Icon.png'.
 Тик
 1.
 2.
@@ -79,6 +87,7 @@
 1.
 1.
 1.
+'https://static.wikia.nocookie.net/brawlstars/images/1/1c/Brawl_Icon.png'.
 8-бит
 1.
 2.
@@ -88,6 +97,7 @@
 2.
 2.
 2.
+'https://static.wikia.nocookie.net/brawlstars/images/1/1c/Brawl_Icon.png'.
 Эмз
 1.
 1.
@@ -97,6 +107,7 @@
 1.
 1.
 1.
+'https://static.wikia.nocookie.net/brawlstars/images/1/1c/Brawl_Icon.png'.
 СТУ
 1.
 2.
@@ -106,6 +117,7 @@
 2.
 1.
 1.
+'https://static.wikia.nocookie.net/brawlstars/images/1/1c/Brawl_Icon.png'.
 Эль Примо
 2.
 1.
@@ -115,6 +127,7 @@
 1.
 2.
 1.
+'https://static.wikia.nocookie.net/brawlstars/images/1/1c/Brawl_Icon.png'.
 Барли
 2.
 2.
@@ -124,6 +137,7 @@
 1.
 2.
 1.
+'https://static.wikia.nocookie.net/brawlstars/images/1/1c/Brawl_Icon.png'.
 Роза
 2.
 1.
@@ -133,6 +147,7 @@
 1.
 2.
 2.
+'https://static.wikia.nocookie.net/brawlstars/images/1/1c/Brawl_Icon.png'.
 Поко
 2.
 1.
@@ -142,6 +157,7 @@
 1.
 2.
 1.
+'https://static.wikia.nocookie.net/brawlstars/images/1/1c/Brawl_Icon.png'.
 Пенни
 3.
 1.
@@ -151,6 +167,7 @@
 1.
 2.
 1.
+'https://static.wikia.nocookie.net/brawlstars/images/1/1c/Brawl_Icon.png'.
 Джеки
 3.
 1.
@@ -160,6 +177,7 @@
 1.
 2.
 2.
+'https://static.wikia.nocookie.net/brawlstars/images/1/1c/Brawl_Icon.png'.
 Рико
 3.
 2.
@@ -169,6 +187,7 @@
 2.
 2.
 1.
+'https://static.wikia.nocookie.net/brawlstars/images/1/1c/Brawl_Icon.png'.
 Дэррил
 3.
 2.
@@ -178,6 +197,7 @@
 1.
 2.
 1.
+'https://static.wikia.nocookie.net/brawlstars/images/1/1c/Brawl_Icon.png'.
 Карл
 3.
 2.
@@ -187,6 +207,7 @@
 1.
 2.
 1.
+'https://static.wikia.nocookie.net/brawlstars/images/1/1c/Brawl_Icon.png'.
 Пайпер
 4.
 1.
@@ -196,6 +217,7 @@
 1.
 2.
 1.
+'https://static.wikia.nocookie.net/brawlstars/images/1/1c/Brawl_Icon.png'.
 Беа
 4.
 1.
@@ -205,6 +227,7 @@
 1.
 1.
 1.
+'https://static.wikia.nocookie.net/brawlstars/images/1/1c/Brawl_Icon.png'.
 Фрэнк
 4.
 1.
@@ -214,6 +237,7 @@
 1.
 2.
 1.
+'https://static.wikia.nocookie.net/brawlstars/images/1/1c/Brawl_Icon.png'.
 Гром
 4.
 1.
@@ -223,6 +247,7 @@
 1.
 2.
 1.
+'https://static.wikia.nocookie.net/brawlstars/images/1/1c/Brawl_Icon.png'.
 Нани
 4.
 2.
@@ -232,6 +257,7 @@
 2.
 2.
 1.
+'https://static.wikia.nocookie.net/brawlstars/images/1/1c/Brawl_Icon.png'.
 Эдгар
 4.
 1.
@@ -241,6 +267,7 @@
 1.
 2.
 1.
+'https://static.wikia.nocookie.net/brawlstars/images/1/1c/Brawl_Icon.png'.
 Гриф
 4.
 2.
@@ -250,6 +277,7 @@
 1.
 2.
 1.
+'https://static.wikia.nocookie.net/brawlstars/images/1/1c/Brawl_Icon.png'.
 Пэм
 4.
 1.
@@ -259,6 +287,7 @@
 2.
 1.
 2.
+'https://static.wikia.nocookie.net/brawlstars/images/1/1c/Brawl_Icon.png'.
 Биби
 4.
 1.
@@ -268,6 +297,7 @@
 1.
 2.
 1.
+'https://static.wikia.nocookie.net/brawlstars/images/1/1c/Brawl_Icon.png'.
 Скуик
 5.
 4.
@@ -277,6 +307,7 @@
 1.
 2.
 1.
+'https://static.wikia.nocookie.net/brawlstars/images/1/1c/Brawl_Icon.png'.
 Тара
 5.
 1.
@@ -286,6 +317,7 @@
 1.
 2.
 1.
+'https://static.wikia.nocookie.net/brawlstars/images/1/1c/Brawl_Icon.png'.
 Джин
 5.
 4.
@@ -295,6 +327,7 @@
 1.
 2.
 2.
+'https://static.wikia.nocookie.net/brawlstars/images/1/1c/Brawl_Icon.png'.
 Макс
 5.
 1.
@@ -304,6 +337,7 @@
 2.
 2.
 2.
+'https://static.wikia.nocookie.net/brawlstars/images/1/1c/Brawl_Icon.png'.
 Спраут
 5.
 2.
@@ -313,6 +347,7 @@
 1.
 2.
 2.
+'https://static.wikia.nocookie.net/brawlstars/images/1/1c/Brawl_Icon.png'.
 Байрон
 5.
 1.
@@ -322,6 +357,7 @@
 2.
 2.
 1.
+'https://static.wikia.nocookie.net/brawlstars/images/1/1c/Brawl_Icon.png'.
 Мистер П
 5.
 3.
@@ -331,6 +367,7 @@
 1.
 2.
 1.
+'https://static.wikia.nocookie.net/brawlstars/images/1/1c/Brawl_Icon.png'.
 Мортис
 5.
 1.
@@ -340,6 +377,7 @@
 1.
 2.
 1.
+'https://static.wikia.nocookie.net/brawlstars/images/1/1c/Brawl_Icon.png'.
 Сэнди
 6.
 1.
@@ -349,6 +387,7 @@
 1.
 2.
 1.
+'https://static.wikia.nocookie.net/brawlstars/images/1/1c/Brawl_Icon.png'.
 Ворон
 6.
 3.
@@ -358,6 +397,7 @@
 1.
 2.
 1.
+'https://static.wikia.nocookie.net/brawlstars/images/1/1c/Brawl_Icon.png'.
 Амбер
 6.
 1.
@@ -367,6 +407,7 @@
 1.
 2.
 1.
+'https://static.wikia.nocookie.net/brawlstars/images/1/1c/Brawl_Icon.png'.
 Леон
 6.
 1.
@@ -376,6 +417,7 @@
 1.
 2.
 2.
+'https://static.wikia.nocookie.net/brawlstars/images/1/1c/Brawl_Icon.png'.
 Мэг
 6.
 1.
@@ -385,6 +427,7 @@
 2.
 1.
 1.
+'https://static.wikia.nocookie.net/brawlstars/images/1/1c/Brawl_Icon.png'.
 Спайк
 6.
 4.
@@ -394,6 +437,7 @@
 2.
 2.
 1.
+'https://static.wikia.nocookie.net/brawlstars/images/1/1c/Brawl_Icon.png'.
 Колетт
 7.
 1.
@@ -403,6 +447,7 @@
 1.
 2.
 1.
+'https://static.wikia.nocookie.net/brawlstars/images/1/1c/Brawl_Icon.png'.
 Бэлль
 7.
 1.
@@ -412,6 +457,7 @@
 2.
 2.
 1.
+'https://static.wikia.nocookie.net/brawlstars/images/1/1c/Brawl_Icon.png'.
 Лу
 7.
 2.
@@ -421,6 +467,7 @@
 2.
 1.
 1.
+'https://static.wikia.nocookie.net/brawlstars/images/1/1c/Brawl_Icon.png'.
 Генерал Гавс
 7.
 2.
@@ -430,6 +477,7 @@
 2.
 2.
 1.
+'https://static.wikia.nocookie.net/brawlstars/images/1/1c/Brawl_Icon.png'.
 Базз
 7.
 3.
@@ -439,6 +487,7 @@
 1.
 2.
 2.
+'https://static.wikia.nocookie.net/brawlstars/images/1/1c/Brawl_Icon.png'.
 Эш
 7.
 2.
@@ -448,6 +497,7 @@
 1.
 1.
 1.
+'https://static.wikia.nocookie.net/brawlstars/images/1/1c/Brawl_Icon.png'.
 Фэнг
 7.
 1.
@@ -457,6 +507,7 @@
 2.
 2.
 1.
+'https://static.wikia.nocookie.net/brawlstars/images/1/1c/Brawl_Icon.png'.
 Джанет
 7.
 1.
@@ -466,6 +517,7 @@
 1.
 2.
 1.
+'https://static.wikia.nocookie.net/brawlstars/images/1/1c/Brawl_Icon.png'.
 Вольт
 7.
 2.
@@ -475,6 +527,7 @@
 1.
 2.
 1.
+'https://static.wikia.nocookie.net/brawlstars/images/1/1c/Brawl_Icon.png'.
 Гэйл
 7.
 1.
@@ -484,6 +537,7 @@
 1.
 2.
 1.
+'https://static.wikia.nocookie.net/brawlstars/images/1/1c/Brawl_Icon.png'.
 Ева
 7.
 3.
@@ -493,6 +547,7 @@
 2.
 1.
 1.
+'https://static.wikia.nocookie.net/brawlstars/images/1/1c/Brawl_Icon.png'.
 Лола
 7.
 1.
@@ -502,3 +557,4 @@
 2.
 2.
 1.
+'https://static.wikia.nocookie.net/brawlstars/images/1/1c/Brawl_Icon.png'.
