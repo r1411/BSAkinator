@@ -134,11 +134,45 @@ find :-
 
 % Нашли единственный ответ
 found(X, Rarity, Race, Speed, GadgetAttack, Gender, Attack, ShortName, SuperDamage) :-
-    write("+Ваш персонаж — "), write(X), write("?"), nl, read(Ans).
+    write("+Ваш персонаж — "), write(X), write("?"), nl, read(Ans),
+    Ans =\= 1 -> addChar(Rarity, Race, Speed, GadgetAttack, Gender, Attack, ShortName, SuperDamage); true.
 
 % Не нашли ответ
 not_found(Rarity, Race, Speed, GadgetAttack, Gender, Attack, ShortName, SuperDamage) :-
-    write("-Я в замешательстве... Добавить нового персонажа?"), nl, read(Ans).
+    write("-Я в замешательстве... Добавить нового персонажа?"), nl, read(Ans),
+    Ans = 1 -> addChar(Rarity, Race, Speed, GadgetAttack, Gender, Attack, ShortName, SuperDamage); true.
+
+addChar(Rarity, Race, Speed, GadgetAttack, Gender, Attack, ShortName, SuperDamage) :-
+    (var(Rarity) -> questionRarity(Rarity) ; true), 
+    (var(Race) -> questionRace(Race) ; true),
+    (var(Speed) -> questionSpeed(Speed) ; true), 
+    (var(GadgetAttack) -> questionGadgetAttack(GadgetAttack) ; true), 
+    (var(Gender) -> questionGender(Gender) ; true),
+    (var(Attack) -> questionAttack(Attack) ; true),
+    (var(ShortName) -> questionShortName(ShortName) ; true),
+    (var(SuperDamage) -> questionSuperDamage(SuperDamage) ; true),
+    write("*Введите имя нового персонажа"), nl,
+    read_term(Char, [var_prefix]),
+    
+    (exists(Rarity, Race, Speed, GadgetAttack, Gender, Attack, ShortName, SuperDamage) -> write("-Персонаж с такими данными уже существует!"), nl, !, fail; true),
+
+    assertz(rarity(Char, Rarity)), assertz(race(Char, Race)), assertz(speed(Char, Speed)), assertz(gadget_attack(Char, GadgetAttack)),
+    assertz(gender(Char, Gender)), assertz(attack(Char, Attack)), assertz(short_name(Char, ShortName)), assertz(super_damage(Char, SuperDamage)),
+
+    append('bsa.txt'),
+    write(Char), nl,
+    write(Rarity), write("."), nl,
+    write(Race), write("."), nl,
+    write(Speed), write("."), nl,
+    write(GadgetAttack), write("."), nl,
+    write(Gender), write("."), nl,
+    write(Attack), write("."), nl,
+    write(ShortName), write("."), nl,
+    write(SuperDamage), write("."), nl,
+    told,
+    
+    write("+Персонаж успешно добавлен!"), nl.
+
 
 main :- 
     set_prolog_flag(encoding, utf8), see('bsa.txt'), read_brawlers, seen, find.

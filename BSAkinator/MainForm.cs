@@ -26,11 +26,15 @@ namespace BSAkinator
             string line = reader.ReadLine();
             if (line.StartsWith("+"))
             {
-                throw new GuessedException(line.Substring(1));
+                throw new ResultOkException(line.Substring(1));
             }
             if (line.StartsWith("-"))
             {
-                throw new NotFoundException(line.Substring(1));
+                throw new ResultBadException(line.Substring(1));
+            }
+            if (line.StartsWith("*"))
+            {
+                throw new NeedInputException(line.Substring(1));
             }
             string[] parts = line.Split('|');
             label1.Text = parts[0];
@@ -58,27 +62,56 @@ namespace BSAkinator
 
         }
 
-        private void AnswerQuestion(int option)
+        private void AnswerQuestion(string option)
         {
             writer.WriteLine(option + ".");
             try
             {
                 ReadQuestion();
             }
-            catch (GuessedException e)
+            catch (ResultOkException e)
             {
-                gameState = GameState.Guessed;
-                tableLayoutPanelAnswers.Controls.Clear();
-                label1.Text = e.Message;
-                FillAnswers(new string[] { (answeredQuestions == 8) ? "Да": "Да", "Нет" });
+                if (gameState == GameState.Asking)
+                {
+                    gameState = GameState.Guessed;
+                    tableLayoutPanelAnswers.Controls.Clear();
+                    label1.Text = e.Message;
+                    FillAnswers(new string[] { (answeredQuestions == 8) ? "Да" : "Да", "Нет" });
+                }
+                else if (gameState == GameState.AskingToAdd)
+                {
+                    MessageBox.Show(e.Message, "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    reader.ReadLine();
+                    ResetGame();
+                }
             }
-            catch (NotFoundException e)
+            catch (ResultBadException e)
             {
-                gameState = GameState.NoAnswer;
-                tableLayoutPanelAnswers.Controls.Clear();
-                label1.Text = e.Message;
-                FillAnswers(new string[] { "Да", "Нет" });
+                if (gameState == GameState.Asking)
+                {
+                    gameState = GameState.NoAnswer;
+                    tableLayoutPanelAnswers.Controls.Clear();
+                    label1.Text = e.Message;
+                    FillAnswers(new string[] { "Да", "Нет" });
+                }
+                else if (gameState == GameState.AskingToAdd)
+                {
+                    MessageBox.Show(e.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    reader.ReadLine();
+                    reader.ReadLine();
+                    ResetGame();
+                }
             }
+            catch (NeedInputException e)
+            {
+                EnterNewCharName(e.Message);
+            }
+        }
+
+        // Отправить прологу имя нового персонажа. В msg лежит строка с приглашением ко вводу, которое нужно показать пользователю. 
+        private void EnterNewCharName(string msg)
+        {
+            AnswerQuestion("Аптуп"); // TODO: Сделать диалог с вводом имени нового персонажа
         }
 
         private void ResetGame()
@@ -87,7 +120,7 @@ namespace BSAkinator
             gameState = GameState.Init;
             tableLayoutPanelAnswers.Controls.Clear();
             buttonBottom.Text = "Начать";
-            label1.Text = "";
+            label1.Text = "Привет! Я угадываю персонажей игры Brawl Stars";
         }
 
         private void buttonBottom_Click(object sender, EventArgs e)
@@ -101,7 +134,7 @@ namespace BSAkinator
                 buttonBottom.Text = "Ответить";
                 ReadQuestion();
             }
-            else if (gameState == GameState.Asking)
+            else if (gameState == GameState.Asking || gameState == GameState.AskingToAdd)
             {
                 // Ответить на вопрос
                 for(int i = 0; i < tableLayoutPanelAnswers.Controls.Count; i++)
@@ -109,7 +142,7 @@ namespace BSAkinator
                     RadioButton rb = (RadioButton)tableLayoutPanelAnswers.Controls[i];
                     if (rb.Checked)
                     {
-                        AnswerQuestion(i + 1);
+                        AnswerQuestion((i + 1).ToString());
                         answeredQuestions += 1;
                     }
                 }
@@ -128,7 +161,8 @@ namespace BSAkinator
                 } 
                 else if (no.Checked)
                 {
-                    writer.WriteLine("2.");
+                    gameState = GameState.AskingToAdd;
+                    AnswerQuestion("2");
                 } 
                 else
                 {
@@ -142,7 +176,8 @@ namespace BSAkinator
 
                 if (yes.Checked)
                 {
-
+                    gameState = GameState.AskingToAdd;
+                    AnswerQuestion("1");
                 }
                 else if (no.Checked)
                 {
@@ -159,13 +194,18 @@ namespace BSAkinator
         }
     }
 
-    class GuessedException : Exception
+    class ResultOkException : Exception
     {
-        public GuessedException(string msg) : base(msg) { }
+        public ResultOkException(string msg) : base(msg) { }
     };
 
-    class NotFoundException : Exception
+    class ResultBadException : Exception
     {
-        public NotFoundException(string msg) : base(msg) { }
+        public ResultBadException(string msg) : base(msg) { }
+    };
+
+    class NeedInputException : Exception
+    {
+        public NeedInputException(string msg) : base(msg) { }
     };
 }

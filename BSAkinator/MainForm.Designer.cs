@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.buttonBottom = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanelAnswers = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.buttonBottom = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -58,17 +58,6 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(904, 661);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // buttonBottom
-            // 
-            this.buttonBottom.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.buttonBottom.Location = new System.Drawing.Point(414, 589);
-            this.buttonBottom.Name = "buttonBottom";
-            this.buttonBottom.Size = new System.Drawing.Size(75, 23);
-            this.buttonBottom.TabIndex = 0;
-            this.buttonBottom.Text = "Начать";
-            this.buttonBottom.UseVisualStyleBackColor = true;
-            this.buttonBottom.Click += new System.EventHandler(this.buttonBottom_Click);
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.tableLayoutPanelAnswers);
@@ -78,17 +67,6 @@
             this.groupBox1.Size = new System.Drawing.Size(898, 234);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::BSAkinator.Properties.Resources.defi;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(898, 234);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
             // 
             // tableLayoutPanelAnswers
             // 
@@ -102,6 +80,28 @@
             this.tableLayoutPanelAnswers.Size = new System.Drawing.Size(892, 215);
             this.tableLayoutPanelAnswers.TabIndex = 0;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = global::BSAkinator.Properties.Resources.defi;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(898, 234);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
+            // buttonBottom
+            // 
+            this.buttonBottom.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonBottom.Location = new System.Drawing.Point(414, 589);
+            this.buttonBottom.Name = "buttonBottom";
+            this.buttonBottom.Size = new System.Drawing.Size(75, 23);
+            this.buttonBottom.TabIndex = 0;
+            this.buttonBottom.Text = "Начать";
+            this.buttonBottom.UseVisualStyleBackColor = true;
+            this.buttonBottom.Click += new System.EventHandler(this.buttonBottom_Click);
+            // 
             // label1
             // 
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -110,6 +110,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(898, 60);
             this.label1.TabIndex = 3;
+            this.label1.Text = "Привет! Я угадываю персонажей игры Brawl Stars";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // MainForm
@@ -118,7 +119,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(904, 661);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.MinimumSize = new System.Drawing.Size(0, 700);
+            this.MinimumSize = new System.Drawing.Size(16, 700);
             this.Name = "MainForm";
             this.Text = "Form1";
             this.tableLayoutPanel1.ResumeLayout(false);
