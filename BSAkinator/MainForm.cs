@@ -175,6 +175,7 @@ namespace BSAkinator
                 {
                     if (no.Checked)
                     {
+                        pictureBox1.Image = Properties.Resources.defi;
                         gameState = GameState.AskingToAdd;
                         AnswerQuestion("2");
                     }
