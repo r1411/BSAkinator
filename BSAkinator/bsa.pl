@@ -76,12 +76,6 @@ questionAttack(X) :-
     write("Нет"), nl,
     read(X).
 
-questionAttack(X) :-
-    write("Ваш персонаж атакует сплэшем?|2"), nl,
-    write("Да"), nl,
-    write("Нет"), nl,
-    read(X).
-
 questionShortName(X) :-
     write("Имя Вашего персонажа короче 4 букв?|2"), nl,
     write("Да"), nl,
@@ -138,7 +132,7 @@ find :-
 found(X, Rarity, Race, Speed, GadgetAttack, Gender, Attack, ShortName, SuperDamage) :-
     image_url(X, ImageUrl),
     write("+Ваш персонаж — "), write(X), write("?|"), write(ImageUrl), nl, read(Ans),
-    Ans =\= 1 -> addChar(Rarity, Race, Speed, GadgetAttack, Gender, Attack, ShortName, SuperDamage); true.
+    (Ans =\= 1 -> addChar(Rarity, Race, Speed, GadgetAttack, Gender, Attack, ShortName, SuperDamage); true).
 
 % Не нашли ответ
 not_found(Rarity, Race, Speed, GadgetAttack, Gender, Attack, ShortName, SuperDamage) :-
@@ -146,14 +140,14 @@ not_found(Rarity, Race, Speed, GadgetAttack, Gender, Attack, ShortName, SuperDam
     Ans = 1 -> addChar(Rarity, Race, Speed, GadgetAttack, Gender, Attack, ShortName, SuperDamage); true.
 
 addChar(Rarity, Race, Speed, GadgetAttack, Gender, Attack, ShortName, SuperDamage) :-
-    (var(Rarity) -> questionRarity(Rarity) ; true), 
-    (var(Race) -> questionRace(Race) ; true),
-    (var(Speed) -> questionSpeed(Speed) ; true), 
-    (var(GadgetAttack) -> questionGadgetAttack(GadgetAttack) ; true), 
-    (var(Gender) -> questionGender(Gender) ; true),
-    (var(Attack) -> questionAttack(Attack) ; true),
-    (var(ShortName) -> questionShortName(ShortName) ; true),
-    (var(SuperDamage) -> questionSuperDamage(SuperDamage) ; true),
+    (var(Rarity) -> questionRarity(Rarity), ! ; true), 
+    (var(Race) -> questionRace(Race), ! ; true),
+    (var(Speed) -> questionSpeed(Speed), ! ; true), 
+    (var(GadgetAttack) -> questionGadgetAttack(GadgetAttack), ! ; true), 
+    (var(Gender) -> questionGender(Gender), ! ; true),
+    (var(Attack) -> questionAttack(Attack), ! ; true),
+    (var(ShortName) -> questionShortName(ShortName), ! ; true),
+    (var(SuperDamage) -> questionSuperDamage(SuperDamage), ! ; true),
     write("*Введите имя и url картинки нового персонажа"), nl,
     read_term(Char, [var_prefix]),
     read_term(ImageUrl, [var_prefix]),
@@ -177,8 +171,8 @@ addChar(Rarity, Race, Speed, GadgetAttack, Gender, Attack, ShortName, SuperDamag
     write("'"), write(ImageUrl), write("'"), write("."), nl,
     told,
     
-    write("+Персонаж успешно добавлен!"), nl.
+    write("+Персонаж успешно добавлен!").
 
 
-main :- 
-    set_prolog_flag(encoding, utf8), see('bsa.txt'), read_brawlers, seen, find.
+init_db :- set_prolog_flag(encoding, utf8), see('bsa.txt'), read_brawlers, seen.
+main :- find.
