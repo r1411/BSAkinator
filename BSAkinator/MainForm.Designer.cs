@@ -49,22 +49,25 @@
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 4;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 74F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(904, 661);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1205, 814);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.tableLayoutPanelAnswers);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(3, 303);
+            this.groupBox1.Location = new System.Drawing.Point(4, 374);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(898, 234);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Size = new System.Drawing.Size(1197, 288);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             // 
@@ -73,20 +76,22 @@
             this.tableLayoutPanelAnswers.ColumnCount = 1;
             this.tableLayoutPanelAnswers.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanelAnswers.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelAnswers.Location = new System.Drawing.Point(3, 16);
+            this.tableLayoutPanelAnswers.Location = new System.Drawing.Point(4, 19);
+            this.tableLayoutPanelAnswers.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanelAnswers.Name = "tableLayoutPanelAnswers";
             this.tableLayoutPanelAnswers.RowCount = 1;
             this.tableLayoutPanelAnswers.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelAnswers.Size = new System.Drawing.Size(892, 215);
+            this.tableLayoutPanelAnswers.Size = new System.Drawing.Size(1189, 265);
             this.tableLayoutPanelAnswers.TabIndex = 0;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Image = global::BSAkinator.Properties.Resources.defi;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(898, 234);
+            this.pictureBox1.Size = new System.Drawing.Size(1197, 288);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
@@ -94,9 +99,10 @@
             // buttonBottom
             // 
             this.buttonBottom.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.buttonBottom.Location = new System.Drawing.Point(414, 589);
+            this.buttonBottom.Location = new System.Drawing.Point(552, 726);
+            this.buttonBottom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonBottom.Name = "buttonBottom";
-            this.buttonBottom.Size = new System.Drawing.Size(75, 23);
+            this.buttonBottom.Size = new System.Drawing.Size(100, 28);
             this.buttonBottom.TabIndex = 0;
             this.buttonBottom.Text = "Начать";
             this.buttonBottom.UseVisualStyleBackColor = true;
@@ -106,22 +112,25 @@
             // 
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(3, 240);
+            this.label1.Location = new System.Drawing.Point(4, 296);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(898, 60);
+            this.label1.Size = new System.Drawing.Size(1197, 74);
             this.label1.TabIndex = 3;
             this.label1.Text = "Привет! Я угадываю персонажей игры Brawl Stars";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(904, 661);
+            this.ClientSize = new System.Drawing.Size(1205, 814);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.MinimumSize = new System.Drawing.Size(16, 700);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MinimumSize = new System.Drawing.Size(18, 851);
             this.Name = "MainForm";
             this.Text = "Акинатор BS";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
