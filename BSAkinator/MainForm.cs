@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Media;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace BSAkinator
@@ -11,7 +13,9 @@ namespace BSAkinator
         private StreamReader reader;
         private int answeredQuestions;
         private GameState gameState;
-
+        SoundPlayer musicSound = new SoundPlayer(Properties.Resources.background);
+        SoundPlayer persSound = new SoundPlayer(Properties.Resources.char_roll_out_02);
+        SoundPlayer epicSound = new SoundPlayer(Properties.Resources.reveal_epic_card_01);
         public MainForm()
         {
             gameState = GameState.Init;
@@ -73,6 +77,16 @@ namespace BSAkinator
             {
                 if (gameState == GameState.Asking)
                 {
+                    //
+                    musicSound.Stop();
+                    persSound.Play();
+                    Thread.Sleep(2250);
+                    new Thread(delegate() 
+                    {
+                        epicSound.Play();
+                        Thread.Sleep(5000);
+                        musicSound.PlayLooping();
+                    }).Start();
                     gameState = GameState.Guessed;
                     tableLayoutPanelAnswers.Controls.Clear();
                     string[] parts = e.Message.Split('|');
@@ -209,8 +223,12 @@ namespace BSAkinator
                 }
             }
         }
-    }
 
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            musicSound.PlayLooping();
+        }
+    }
     class ResultOkException : Exception
     {
         public ResultOkException(string msg) : base(msg) { }

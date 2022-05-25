@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
+using System.Media;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace BSAkinator
@@ -25,6 +27,7 @@ namespace BSAkinator
         [STAThread]
         static void Main()
         {
+
             string exePath = "C:/Program Files/swipl/bin/swipl.exe";
             if (!File.Exists(exePath))
             {
@@ -50,7 +53,9 @@ namespace BSAkinator
             GetPrologInput().WriteLine("init_db.");
             GetPrologOutput().ReadLine();
             GetPrologOutput().ReadLine();
-
+            SoundPlayer simpleSound = new SoundPlayer(Properties.Resources.supercell_jingle);
+            simpleSound.Play();
+            Thread.Sleep(2000);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainForm());
