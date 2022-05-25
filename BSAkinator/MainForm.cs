@@ -115,9 +115,14 @@ namespace BSAkinator
         // Отправить прологу имя нового персонажа. В msg лежит строка с приглашением ко вводу, которое нужно показать пользователю. 
         private void EnterNewCharName(string msg)
         {
-            // TODO: Сделать диалог с вводом имени персонажа и ссылки на картинку
-            writer.WriteLine("Аптуп."); 
-            AnswerQuestion("'https://static.wikia.nocookie.net/brawlstars/images/1/1c/Brawl_Icon.png'"); // TODO: Сделать диалог с вводом имени нового персонажа
+            Dialog dialog = new Dialog();
+            dialog.ShowDialog();
+            string name = dialog.Nickname;
+            string link = dialog.Link;
+            name = name + ".";
+            link = "'" + link + "'";
+            writer.WriteLine(name); 
+            AnswerQuestion(link); // TODO: Сделать диалог с вводом имени нового персонажа
         }
 
         private void ResetGame()
