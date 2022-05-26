@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Media;
 using System.Threading;
@@ -14,8 +13,8 @@ namespace BSAkinator
         private int answeredQuestions;
         private GameState gameState;
         SoundPlayer musicSound = new SoundPlayer(Properties.Resources.background);
-        SoundPlayer persSound = new SoundPlayer(Properties.Resources.char_roll_out_02);
-        SoundPlayer epicSound = new SoundPlayer(Properties.Resources.reveal_epic_card_01);
+        SoundPlayer revealBrawlerSound = new SoundPlayer(Properties.Resources.reveal_brawler);
+        SoundPlayer revealFrankSound = new SoundPlayer(Properties.Resources.reveal_frank);
         public MainForm()
         {
             gameState = GameState.Init;
@@ -77,19 +76,19 @@ namespace BSAkinator
             {
                 if (gameState == GameState.Asking)
                 {
-                    //
+                    string[] parts = e.Message.Split('|');
+                    bool frank = parts[0].Contains("Фрэнк");
                     musicSound.Stop();
-                    persSound.Play();
-                    Thread.Sleep(2250);
+                    (frank ? revealFrankSound : revealBrawlerSound).Play();
+                    Thread.Sleep(2000);
                     new Thread(delegate() 
                     {
-                        epicSound.Play();
-                        Thread.Sleep(5000);
+                        Thread.Sleep(frank ? 9400 : 2000);
+                        revealBrawlerSound.Stop();
                         musicSound.PlayLooping();
                     }).Start();
                     gameState = GameState.Guessed;
                     tableLayoutPanelAnswers.Controls.Clear();
-                    string[] parts = e.Message.Split('|');
                     label1.Text = parts[0];
                     pictureBox1.Image = Properties.Resources.bs_loading;
                     pictureBox1.LoadAsync(parts[1]);

@@ -97,11 +97,10 @@
     <Content Include="bsa.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <None Include="Resources\reveal_epic_card_01.wav" />
-    <None Include="Resources\char_roll_out_02.wav" />
+    <None Include="Resources\reveal_brawler.wav" />
+    <None Include="Resources\reveal_frank.wav" />
     <None Include="Resources\supercell_jingle.wav" />
     <None Include="Resources\background.wav" />
-    <None Include="Resources\background_theme.bmp" />
     <None Include="Resources\bs_loading.gif" />
     <None Include="Resources\defi.png" />
   </ItemGroup>
