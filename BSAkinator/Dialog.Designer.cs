@@ -79,9 +79,9 @@ namespace BSAkinator
             this.label2.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.Location = new System.Drawing.Point(65, 132);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(243, 28);
+            this.label2.Size = new System.Drawing.Size(200, 28);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Введите имя персонажа";
+            this.label2.Text = "Ссылка на картинку";
             // 
             // Dialog
             // 
